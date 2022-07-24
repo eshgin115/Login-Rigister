@@ -33,5 +33,10 @@ namespace LoginRigister.UI
                 }
             }
         }
+
+        internal static void Main(string[] strings)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

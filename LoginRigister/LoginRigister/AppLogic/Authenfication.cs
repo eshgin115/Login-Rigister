@@ -43,13 +43,13 @@ namespace LoginRigister.AppLogic
                 }
                 else
                 {
-                    DashBoard.UserPanel(email);
+                    DashBoard.AdminPanel();
                 }
 
             }
 
         }
-        private static string GetName()
+        public static string GetName()
         {
             Console.Write("Please add User's name : ");
             string firstName = Console.ReadLine();
@@ -60,7 +60,7 @@ namespace LoginRigister.AppLogic
             }
             return firstName;
         }
-        private static string GetLastName()
+        public static string GetLastName()
         {
             Console.Write("Please add User's LastName : ");
             string lastName = Console.ReadLine();
@@ -71,7 +71,7 @@ namespace LoginRigister.AppLogic
             }
             return lastName;
         }
-        private static string GetEmail()
+        public static string GetEmail()
         {
             Console.Write("Please add User's email : ");
             string email = Console.ReadLine();
@@ -82,7 +82,7 @@ namespace LoginRigister.AppLogic
             }
             return email;
         }
-        private static string GetPassword()
+        public static string GetPassword()
         {
             Console.Write("Please add User's password : ");
             string password = Console.ReadLine();
