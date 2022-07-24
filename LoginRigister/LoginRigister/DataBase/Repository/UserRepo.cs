@@ -9,6 +9,28 @@ namespace LoginRigister.DataBase.Repository
 {
     class UserRepo
     {
+        private static int _idcounter;
+
+        public static int IDCounter
+        {
+            get
+            {
+                _idcounter++;
+                return _idcounter;
+            }
+        }
+        private static int _numberOnTheList;
+
+        public static int NumberOnTheList
+        {
+            get
+            {
+                _numberOnTheList++;
+                return _numberOnTheList;
+            }
+
+        }
+
         public static List<User> users { get; set; } = new List<User>() { new User("Super", "Admin", "Admin@gmail.com", "123312") };
         public static bool IsExistsEmail(string email)
         {
