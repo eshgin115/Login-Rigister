@@ -43,7 +43,7 @@ namespace LoginRigister.AppLogic
                 }
                 else
                 {
-                    DashBoard.AdminPanel();
+                    DashBoard.UserPanel(email);
                 }
 
             }
