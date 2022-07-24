@@ -31,7 +31,10 @@ namespace LoginRigister.DataBase.Repository
 
         }
 
-        public static List<User> users { get; set; } = new List<User>() { new User("Super", "Admin", "Admin@gmail.com", "123312") };
+        public static List<User> users { get; set; } = new List<User>()
+        {
+            new Admin("Eshqin","Faracov","eshqin115@gmail.com","Danser115")
+        };
         public static bool IsExistsEmail(string email)
         {
             for (int i = 0; i < users.Count; i++)
@@ -43,7 +46,7 @@ namespace LoginRigister.DataBase.Repository
             }
             return true;
         }
-        public static User AddUser(string name,
+        public static User Add(string name,
             string lastName,
             string email,
             string password)
@@ -51,6 +54,27 @@ namespace LoginRigister.DataBase.Repository
             User user = new User(name, lastName, email, password);
             users.Add(user);
             return user;
+        }
+        public static Admin AddAdmin(string name,
+            string lastName,
+            string email,
+            string password)
+        {
+            Admin admin = new Admin(name, lastName, email, password);
+            users.Add(admin);
+            return admin;
+
+        }
+        public static User Add(User user)
+        {
+            users.Add(user);
+            return user;
+        }
+        public static Admin AddAdmin(Admin admin)
+        {
+            users.Add(admin);
+            return admin;
+
         }
         public static User GetUserByEmailAndPassword(string email, string password)
         {
@@ -87,5 +111,46 @@ namespace LoginRigister.DataBase.Repository
             }
             return null;
         }
+        public static void RemoveUserByEmail(string email)
+        {
+            foreach (User user in users)
+            {
+                if (user.Email == email)
+                {
+                    users.Remove(user);
+                }
+            }
+        }
+        //public static void Update(string email)
+        //{
+        //    User findUser = UserRepo.GetUserByEmail(email);
+        //    findUser.Name =
+
+        //}
+
+        public static void Delete(User user)
+        {
+            users.Remove(user);
+        }
+        public static void ShowAdmin()
+        {
+            foreach (User user in users)
+            {
+                if (user is Admin)
+                {
+                    Console.WriteLine(user.GetInfo());
+                }
+            }
+        }
+        public static void ShowUser()
+        {
+            foreach (User user in users)
+            {
+                Console.WriteLine(user.GetInfo());
+            }
+        }
+
+
     }
 }
+
