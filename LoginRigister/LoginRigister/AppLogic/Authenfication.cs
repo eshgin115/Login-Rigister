@@ -33,7 +33,18 @@ namespace LoginRigister.AppLogic
             if (UserRepo.IsCheckEmailAndPassword(email, password))
             {
                 User user = UserRepo.GetUserByEmail(email);
-                Console.WriteLine(user.GetInfo());
+                if (user == null)
+                {
+                    Console.WriteLine("User is not have in system");
+                }
+                else if (user is Admin)
+                {
+                    DashBoard.AdminPanel();
+                }
+                else
+                {
+                    DashBoard.UserPanel(email);
+                }
 
             }
 
