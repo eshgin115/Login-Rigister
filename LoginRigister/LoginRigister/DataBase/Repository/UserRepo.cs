@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace LoginRigister.DataBase.Repository
 {
+
     class UserRepo
     {
         private static int _idcounter;
@@ -30,6 +31,7 @@ namespace LoginRigister.DataBase.Repository
             }
 
         }
+
 
         public static List<User> users { get; set; } = new List<User>()
         {

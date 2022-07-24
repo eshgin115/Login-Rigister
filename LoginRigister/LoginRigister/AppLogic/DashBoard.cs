@@ -9,8 +9,10 @@ using System.Threading.Tasks;
 
 namespace LoginRigister.AppLogic
 {
+
     public static partial class DashBoard
     {
+
         public static void AdminPanel()
         {
             while (true)
@@ -52,7 +54,7 @@ namespace LoginRigister.AppLogic
                     {
                         UserRepo.Delete(user);
                         string newName = Authenfication.GetName();
-                        string newLastName = Authenfication.GetLastName();
+                        string newLastName = Authenfication.GetName();
                         User user1 = new User(newName, newLastName, user.Email, user.Password, user.Id, user._rigisterTime, user.NumberOnTheList);
                         UserRepo.Add(user1);
                     }
@@ -156,7 +158,7 @@ namespace LoginRigister.AppLogic
                 }
                 else if (command == "/Logout")
                 {
-                    Program.Main(new string[] { });
+                    Program.Main(Array.Empty<string>());
                 }
                 else
                 {
@@ -167,7 +169,6 @@ namespace LoginRigister.AppLogic
             }
         }
     }
-
     public static partial class DashBoard
     {
         public static void UserPanel(string email)

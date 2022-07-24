@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace LoginRigister.DataBase.Models
 {
-    internal class Report
+    class Report
     {
+
+        public string reporterEmail { get; set; }
+        public string text { get; set; }
+        public static int id { get; set; }
     }
 }

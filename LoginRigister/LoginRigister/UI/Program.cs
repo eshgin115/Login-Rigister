@@ -3,9 +3,10 @@ using System;
 
 namespace LoginRigister.UI
 {
-    internal class Program
+
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             Console.WriteLine("/Register");
             Console.WriteLine("/Login");
@@ -15,15 +16,15 @@ namespace LoginRigister.UI
                 Console.WriteLine();
                 Console.WriteLine("Please enter command: ");
                 string command = Console.ReadLine();
-                if (command== "/Register")
+                if (command == "/Register")
                 {
                     Authenfication.Register();
                 }
-                else if(command== "/Login")
+                else if (command == "/Login")
                 {
                     Authenfication.Login();
                 }
-                else if( command== "/exit")
+                else if (command == "/exit")
                 {
                     break;
                 }
@@ -32,11 +33,6 @@ namespace LoginRigister.UI
                     Console.WriteLine("Command is not correct");
                 }
             }
-        }
-
-        internal static void Main(string[] strings)
-        {
-            throw new NotImplementedException();
         }
     }
 }

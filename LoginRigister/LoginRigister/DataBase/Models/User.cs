@@ -37,7 +37,6 @@ namespace LoginRigister.DataBase.Models
             Email = email;
             Password = password;
             _rigisterTime = DateTime.Now;
-            
             Id = UserRepo.IDCounter;
             NumberOnTheList = UserRepo.NumberOnTheList;
 
