@@ -19,7 +19,7 @@ namespace LoginRigister.AppLogic
             string email = GetEmail();
             string password = GetPassword();
             Console.WriteLine();
-            User user = UserRepo.AddUser(firstName, lastName, email, password);
+            User user = UserRepo.Add(firstName, lastName, email, password);
             Console.WriteLine("User aded the system" + user.GetInfo());
             Console.WriteLine("You successfully registered, now you can login with your new account!");
         }
